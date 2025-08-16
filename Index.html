@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plastic Detection AI</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.9.0"></script>
+  <script defer src="script.js"></script>
+  <style>
+    #confidenceBar {
+      height: 20px;
+      width: 100%;
+      background-color: #ddd;
+      margin-top: 10px;
+    }
+    #confidenceFill {
+      height: 100%;
+      width: 0%;
+      background-color: green;
+      transition: width 0.3s;
+    }
+    video {
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+<nav class="container-fluid">
+  <ul><li><strong>Plastic Detector</strong></li></ul>
+</nav>
+
+<main class="container">
+  <h2>AI Plastic Type & Quality Detection</h2>
+  <video id="video" autoplay playsinline width="400" height="300"></video>
+  <p id="result">Loading model...</p>
+  <div id="confidenceBar">
+    <div id="confidenceFill"></div>
+  </div>
+</main>
+</body>
+</html>
